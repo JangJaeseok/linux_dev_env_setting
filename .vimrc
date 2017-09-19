@@ -41,6 +41,7 @@ Plugin 'tomtom/tlib_vim'                    " dependencies #2
 Plugin 'honza/vim-snippets'                 " snippets repo
 
 "-------------------=== Languages support ===-------------------
+Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-commentary'               " Comment stuff out
 Plugin 'tpope/vim-fugitive'
 Plugin 'mitsuhiko/vim-sparkup'              " Sparkup(XML/jinja/htlm-django/etc.) support
@@ -78,9 +79,14 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " All of your Plugins must be added before the following line
 
 Plugin 'AutoComplPop'	" for auto complete pop
+"Plugin 'valloric/youcompleteme'
+Plugin 'Shougo/neocomplcache.vim'
 Plugin 'DoxygenToolkit.vim'	" for Doxygen
 Plugin 'davidhalter/jedi-vim'	" for jedi-vim
 Plugin 'mileszs/ack.vim'	" for ack
+
+
+Plugin 'mattn/emmet-vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
