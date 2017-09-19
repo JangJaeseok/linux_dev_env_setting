@@ -55,6 +55,8 @@ Plugin 'rosenfeld/conque-term'              " Consoles as buffers
 Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
 Plugin 'flazz/vim-colorschemes'             " Colorschemes
 Plugin 'altercation/vim-colors-solarized'	" colors-solarized
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 
 "-------------------=== Python  ===-----------------------------
 Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
@@ -111,6 +113,7 @@ set autoindent                              " indent when moving to the next lin
 set cindent
 set smartindent
 
+set cursorcolumn
 set cursorline                              " shows line under the cursor's line
 set showmatch                               " shows matching part of bracket pairs (), [], {}
 
@@ -125,7 +128,7 @@ set backspace=indent,eol,start              " backspace removes all (indents, EO
 
 set scrolloff=10                            " let 10 lines before/after cursor during scroll
 
-set clipboard=unnamed                       " use system clipboard
+"set clipboard=unnamed                       " use system clipboard
 
 set exrc                                    " enable usage of additional .vimrc files from working directory
 set secure                                  " prohibit .vimrc files to execute shell, create files, etc...
