@@ -11,6 +11,7 @@ datetime=$(date +%Y%m%d%H%M%S)
 HOSTNAME=`hostname`
 
 VUNDLE_HTTPS="https://github.com/VundleVim/Vundle.vim.git"
+TPM_HTTPS="https://github.com/tmux-plugins/tpm.git"
 
 lowercase(){
 	echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
@@ -78,6 +79,9 @@ conf_backup(){
 	if [ -d ~/.vim ]; then
 		mv ~/.vim ${CONF_BAK}
 	fi
+	if [ -d ~/.tmux ]; then
+		mv ~/.tmux ${CONF_BAK}
+	fi
 	if [ -d ~/.gitconfig ]; then
 		mv ~/.gitconfig ${CONF_BAK}
 	fi
@@ -140,6 +144,10 @@ conf_backup
 
 echo "Installing vim vundle..."
 git clone ${VUNDLE_HTTPS} ~/.vim/
+
+echo "Installing tmux plugin manager..."
+mkdir -p ~/.tmux/plugins
+git clone ${TPM_HTTPS} ~/.tmux/plugins/tpm
 
 echo "copy configuration files to ~/"
 cp .vimrc ~/
