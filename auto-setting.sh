@@ -78,6 +78,9 @@ conf_backup(){
 	if [ -d ~/.vim ]; then
 		mv ~/.vim ${CONF_BAK}
 	fi
+	if [ -d ~/.gitconfig ]; then
+		mv ~/.gitconfig ${CONF_BAK}
+	fi
 }
 
 echo "${BLUE}"
@@ -142,6 +145,7 @@ echo "copy configuration files to ~/"
 cp .vimrc ~/
 cp .bashrc ~/
 cp .tmux.conf ~/
+cp .gitconfig ~/
 
 echo "copy mkcscope.sh to ~/.vim"
 cp mkcscope.sh ~/.vim
