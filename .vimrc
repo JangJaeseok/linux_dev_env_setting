@@ -85,6 +85,7 @@ Plugin 'DoxygenToolkit.vim'	" for Doxygen
 Plugin 'davidhalter/jedi-vim'	" for jedi-vim
 Plugin 'mileszs/ack.vim'	" for ack
 
+Plugin 'tmux-plugins/vim-tmux'
 
 Plugin 'mattn/emmet-vim'
 
