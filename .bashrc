@@ -15,6 +15,7 @@ alias echob='echo b > /proc/sysrq-trigger'
 alias echoc='echo c > /proc/sysrq-trigger'
 alias echot='echo t > /proc/sysrq-trigger'
 
+alias ll='ls -l'
 alias l='ll -h'
 alias la='ll -ah'
 alias cls='clear'
