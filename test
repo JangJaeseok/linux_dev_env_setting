@@ -1,0 +1,94 @@
+# README for KSMART Base Simulator
+This README shows how to config and run KSMART Base Simulator
+
+## Pre-requisite
+* KSMART Server
+* Registered job file on KSMART server
+* Inspection result data sample file
+```
+SPI : P|D|A|COMP|PART|F_A|F_R|F_P file
+AOI : P|V|C|A|R file
+```
+
+## Configure
+#### Edit to SimConfig.py
+1. Setting to config
+ * ksmart_server_ip : KSMART server ip address
+ * ksmart_mysql_user : KSMART server MariaDB user
+ * ksmart_mysql_password : KSMART server MariaDB password
+ * default_m2m_movetime : Between machine to machine move time in LINE
+ * default_log_level : Log default level
+ * default_log_dir : Log default directory
+ * default_gendata_dir : Generated inspection result data default directory
+ * default_sample_dir : Sample data default directory
+ * data_server_ip :
+ * data_mysql_user :
+ * data_mysql_password :
+ * data_db_name :
+2. Simulator job definition
+```
+sample
+
+tinfo = [
+        {
+            'type': 'SPI',
+            'user_id' : 'kyadmin',
+            'agent_id': '772C5A40-AD38-4D18-9A03-2E1277298A26',
+            'asst_seqno': '1001154',
+            'sample_pcbguid': '4451',
+            'job_id': '21',
+            'job_name': 'GRR-SPI',
+            'yield_rate' : 0,
+            'inspect_count' : 10,
+            'inspect_time' : 20
+        },
+        {
+            'type' : 'PostAOI',
+            'user_id' : 'kyadmin',
+            'agent_id' : 'E4127EB6-A11B-4F7B-B9A7-2FC29B4A8BE0',
+            'asst_seqno': '1001157',
+            'sample_pcbguid' : 'F6BAA338-1B10-43A6-9029-32F4CA9E34CD',
+            'job_id': '6245',
+            'job_name': 'KYE_DEMO_BRD1-DK',
+            'yield_rate' : 90,
+            'inspect_count' : 10,
+            'inspect_time' : 20
+        },
+        {
+            'type' : 'LINE',
+            'sub_tinfo' :
+                [
+                    {
+                        'type' : 'PreAOI',
+                        'user_id' : 'kyadmin',
+                        'agent_id' : 'E2418B97-EE55-4BB5-866F-F1267535B07A',
+                        'asst_seqno' : '1001064',
+                        'sample_pcbguid' : 'F6BAA338-1B10-43A6-9029-32F4CA9E34CD',
+                        'job_id' : '272',
+                        'job_name' : 'KY-J230NU$M8K_B_REV0.5-ED0.0(M)',
+                        'yield_rate' : 95,
+                        'inspect_count' : 10,
+                        'inspect_time' : 20
+                    },
+                    {
+                        'type' : 'PostAOI',
+                        'user_id' : 'kyadmin',
+                        'agent_id' : '4785BA38-5591-4996-94A2-C906995C4156',
+                        'asst_seqno' : '1001066',
+                        'sample_pcbguid' : 'F6BAA338-1B10-43A6-9029-32F4CA9E34CD',
+                        'job_id' : '6251',
+                        'job_name' : 'KYE_DEMO_BRD1-DK',
+                        'yield_rate' : 95,
+                        'inspect_count' : 10,
+                        'inspect_time' : 20
+                    }
+                ]
+        }
+    ]
+```
+
+## Running
+* Run KSMART Base Simulator with python 2.7.5
+```
+python main.py
+```
